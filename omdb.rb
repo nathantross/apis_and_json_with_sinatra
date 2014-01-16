@@ -42,7 +42,7 @@ post '/result' do
 end
 
 get '/poster/:imdb' do |imdb_id|
-  response = Typhoeus.get "www.omdbapi.com", :params => {:reference => imdb_id}
+  response = Typhoeus.get "www.omdbapi.com", :params => {:i => imdb_id}
   result = JSON.parse(response.body)
   poster = result["Poster"]
   
